@@ -1,0 +1,39 @@
+* {
+    box-sizing:border-box;
+}
+main {
+    width: 100%;
+    /* 上|左右|下 */
+    padding: 60px 80px 80px;
+    background: rgb(43, 153, 212);
+}
+div {
+    padding: 12px;
+    margin: 20px auto;
+    background-color: white;
+    /* background-color: Transparent; */
+    border: 10px solid hsla(0, 0%, 100%, .2);
+
+    /* 为什么不能使用下面的样式来指定边框的颜色 */
+    /* 若是使用下面的样式的话，background-clip 属性则不会生效 */
+    /* 因为只有下面的代码给div的border指定了颜色，只有作者声明，优先级最高，并没有其它的声明给该border指定颜色 */
+    /* 
+    我们想实现半透明边框的效果
+        则是利用：一开始设置div的border属性时，border属性的透明不能为1
+        这样当background-clip为默认值border-box时，div的background-color因为透明度为1会覆盖border
+        再设置：当选择单选框后，div的background-clip值为padding-box
+        这样，选择单选框的时候，div的背景颜色只会显现到padding，border并不会有这个背景颜色
+        div中设置的border的颜色没有被div的背景颜色挡住，可以显示出来
+        由上：我们可以如下设置
+    */
+    /* border: 10px solid rgba(0.2,0, 0.3, 0.3);  */
+    /* 单上面显示出来的 当没选的时候 border设置的有透明度的颜色和div的背景颜色重叠会产生一种新的颜色
+        因此最好还是使用 div为白色背景 border的背景使用hsla(0, 0%, 100%, .5)来指定
+    */
+}
+label {
+    color: blueviolet;
+}
+input[id='pb']:checked ~ div {
+    background-clip: padding-box;
+}
