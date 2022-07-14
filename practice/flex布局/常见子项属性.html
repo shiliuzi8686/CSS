@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            width: 60%;
+            height:150px;
+            background-color: pink;
+            margin:0 auto;
+        }
+        section div:nth-child(1){
+            width: 100px;
+            height: 150px;
+            background-color: red;
+        }
+        section div:nth-child(2){
+            flex: 1;
+            background-color: green;
+        }
+        section div:nth-child(3){
+            width: 100px;
+            height: 150px;
+            background-color: blue;
+        }
+
+        p {
+            display: flex;
+            width: 60%;
+            height:150px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        p span {
+            flex:1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <p>
+        <!-- 因为这三个span没有宽度，不占宽度，所以这三个平分父元素的剩余空间时才能有这样的效果（平分父级元素的空间，父级元素的剩余空间就是整个宽度） -->
+        <span style="background-color: greenyellow;">1</span>
+        <span>2</span>
+        <span style="background-color: greenyellow;">3</span>
+    </p>
+</body>
+</html>

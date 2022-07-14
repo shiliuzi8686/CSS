@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位方案的对比</title>
+    <style>
+        body {
+            display: block;
+            font-size: 12px;
+            list-style: 200%;
+            width: 400px;
+            height: 400px;
+        }
+        p {
+            display: block;
+        }
+        span {
+            display: inline;
+        }
+
+        /* 正常流 */
+        /* #outer {
+            color: red;
+        }
+
+        #inner {
+            color: blue;
+        } */
+
+        /* 相对定位 */
+        /* #outer {
+            position: relative;
+            top: -12px;
+            color: red;
+        }
+        #inner {
+            position: relative;
+            top: 12px;
+            color: blue;
+        } */
+
+        /* 浮动 */
+        /* #outer {
+            color: red;
+        }
+        #inner {
+            float: right;
+            width: 130px;
+            color: blue;
+        } */
+
+        /* 绝对定位 */
+        #outer { 
+            position: absolute; 
+            top: 200px; 
+            left: 200px; 
+            width: 200px;
+            color: red; 
+        }
+        #inner {
+            color: blue;
+        } 
+    </style>
+</head>
+<body>
+    <p>
+        body 内容的开头
+        <span id="'outer">
+            外层内容的开头
+            <span id="inner">内部内容</span>
+            外层内容的结束
+        </span>
+        body 内容的结束
+    </p>
+</body>
+</html>

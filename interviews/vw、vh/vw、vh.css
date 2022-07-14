@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.father{
+    width: 50vw;
+    height: 50vh;
+    background-color: black;
+}
+.son{
+    width: 25vw;
+    height: 25vh;
+    background-color: rgb(155, 236, 16);
+}
+/* .all{
+    width: 1536px;
+    height: 25vh;
+    background-color: rgb(210, 21, 231);
+} */

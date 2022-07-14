@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <!-- 弹性子项：block child -->
+        <div id="item1">block</div>
+
+        <!-- 弹性子项：floated element;floating is ignored -->
+        <div id="item2" style="float: left;">float</div>
+
+        <!-- 弹性子项：anonymous block box around inline content -->
+        anonymous item 3（匿名盒子3）
+
+        <!-- 弹性子项：inline child -->
+        <span>
+            item 4
+            <!-- 弹性子项4 do not split around blocks -->
+            <q style="display: block;" id="not-an-item">item-4</q>
+            item 4
+        </span>
+    </div>
+</body>
+</html>

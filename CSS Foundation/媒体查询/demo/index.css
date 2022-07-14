@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    box-sizing: border-box
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width:400px) {
+    main{
+        background-color: aqua;
+    }
+}
+
+@media (min-width:401px) {
+    main{
+        background-color: rgb(242, 255, 0);
+    }
+}
+
+/* 为什么不生效 */
+/* @media (width >= 401px) {
+    main{
+        background-color: rgb(242, 255, 0);
+    }
+} */
+

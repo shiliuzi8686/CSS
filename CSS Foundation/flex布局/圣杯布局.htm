@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 600px) {
+            /* Too narrow to support three columns */
+            main {
+                flex-flow: column;
+            }
+            main > article,
+            main > nav,
+            main > aside {
+                /* Return them to document order */
+                order: 0;
+                width: auto;
+            }
+        }
+
+        main {
+            display: flex;
+        }
+        main > article {
+            order: 2;
+            min-width: 12em;
+            flex:1;
+            background-color: antiquewhite;
+        }
+        main > nav {
+            order: 1;
+            width: 200px;
+            background-color: rgb(215, 250, 240);
+        }
+        main > aside {
+            order: 3;
+            width: 200px;
+            background-color: rgb(166, 88, 181);
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+    <main>
+        <article>文章</article>
+        <nav>侧边导航</nav>
+        <aside>附加内容</aside>
+    </main>
+    <footer>底部</footer>
+</body>
+</html>

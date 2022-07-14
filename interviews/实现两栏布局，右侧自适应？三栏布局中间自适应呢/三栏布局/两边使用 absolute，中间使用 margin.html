@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /**
+            实现：
+                左右两边使用绝对定位，固定在两侧
+                中间沾满一行，但通过 margin 和左右两边留出10px的间隔
+        */
+        .container{
+            position: relative;
+        }
+        .left,
+        .right,
+        .middle{
+            height: 200px;
+        }
+        .left{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 120px;
+            background-color: aquamarine;
+        }
+        .right{
+            position: absolute;
+            top:0;
+            right: 0;
+            width: 120px;
+            background-color: rgb(164, 15, 159);
+        }
+        .middle{
+            /* 绝对定位的元素已经脱离文档流，防止不被遮挡,margin要大于绝对定位的元素 */
+            margin: 0 130px;
+            background-color: rgb(164, 134, 15);
+        }
+    </style>
+    <div class="container">
+        <div class="left"></div>
+        <div class="middle"></div>
+        <div  class="right"></div>
+    </div>
+</body>
+</html>

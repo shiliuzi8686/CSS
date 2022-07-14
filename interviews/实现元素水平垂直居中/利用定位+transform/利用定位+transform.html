@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /**
+            原理：与定位+margin负值相同
+                translate(-50%, -50%)将会将元素位移自己宽度和高度的-50%
+            优点：
+                不需要知道子元素的宽高
+        */
+        .father{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+        .son{
+            position:absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

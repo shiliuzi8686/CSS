@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用定位+margin:负值</title>
+</head>
+<body>
+    <style>
+        /**
+            原理：
+            1.先定位到父元素的中心(基础：父元素为相对定位，子元素为绝对定位)
+                在子元素上使用top和left
+            2.根据子元素的宽高，利用margin负值,来设置子元素的位移(基础：子元素设置了宽高)
+            缺点：
+                父元素的宽高固定，子元素的宽高也是固定的，不是响应式布局
+        */
+        .father{
+            position:relative;
+            width:250px;
+            height:250px;
+            background: skyblue;
+        }
+        .son {
+            position: absolute;
+            /* 这里虽然设置top和left是50%，这个位置刚好是父元素的中心 */
+            /* 加上子元素本身宽高都为父元素的一半 */
+            /* 而子元素设置了宽高(用于margin负值) */
+            /* 此时margin为负值则是子元素的位移,值为：(子元素width/height)/2 */
+            top: 50%;
+            left: 50%;
+            margin-left:-75px;
+            margin-top:-75px;
+            width:150px;
+            height:150px;
+            background: red;
+        }
+    </style>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

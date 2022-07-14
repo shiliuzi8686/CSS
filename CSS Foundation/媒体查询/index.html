@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 响应式三栏布局 -->
+    <main>
+        <aside>
+            <img src="./dz.png" alt="">
+            <img src="./comment.png" alt="">
+            <img src="./share.png" alt="">
+        </aside>
+        <article>
+            文章本天成 妙手偶得之
+            <!-- 引出文章导航 -->
+            <img id='menu' src="./menu.png" alt="">
+        </article>
+        <nav></nav>
+    </main>
+    <script>
+        let img = document.getElementById('menu')
+        img.onclick = function () {
+            let nav = document.getElementsByTagName('nav')
+            // console.log(nav)
+            // console.log(Reflect.ownKeys(nav.style))
+            // console.log('111')
+            // nav.style['display'] = 'block'
+            // nav.style['z-index'] = 2
+        }
+    </script>
+</body>
+</html>

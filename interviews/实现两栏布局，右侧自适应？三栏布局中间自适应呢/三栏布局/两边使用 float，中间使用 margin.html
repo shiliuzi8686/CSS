@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /**
+            两边使用 float，中间使用 margin
+            注：需要将中间的内容放在html结构最后，否则右侧会臣在中间内容的下方
+            缺点：
+                主体内容最后加载
+                右边在主体内容之前，如果是响应式布局，，不能简单的换行展示
+            */
+        .wrap{
+            background: rgb(142, 135, 135);
+            /* 生成BFC，计算高度时考虑浮动的元素 */
+            overflow: hidden;
+            padding: 20px;
+            height: 200px;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            float:left;
+            background: coral;
+        }
+        .right{
+            width: 120px;
+            height: 200px;
+            float: right;
+            background: lightblue;
+        }
+        .middle{
+            margin-left: 220px;
+            height: 200px;
+            background: lightpink;
+            margin-right: 140px;
+        }
+    </style>
+    <div class="wrap">
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+        <div class="middle">中间</div>
+    </div>
+</body>
+</html>
