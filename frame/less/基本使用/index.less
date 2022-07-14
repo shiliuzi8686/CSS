@@ -1,0 +1,47 @@
+// 变量
+@wid:200px;
+@hei:@wid + 50px;
+#variables{
+    height: @hei;
+    width:@wid;
+    background-color:blue;
+}
+.div{
+    display: inline-block;
+}
+// 这里若是 #mixin{.div();} 只给父级linline-block，而子级依然是block的情况有待深究
+#mixin > div{
+    // 混入（类）
+    .div();
+}
+#mixins{
+    float: right;
+    // 混入（id）
+    #variables();
+}
+// 嵌套
+#nesting{
+    background-color: orange;
+    p{
+        color: blue;
+    }
+    div{
+        #variables();
+        background-color: black;
+    }
+}
+
+// 经典的clearfix技巧，重写为一个混入(mixin)???作用是啥
+.clearfix{
+    display: block;
+    zoom: 1;
+    &:after{
+        // content: '提示';
+        content: ' ';
+        display: block;
+        font-size: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}

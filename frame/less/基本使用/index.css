@@ -1,0 +1,41 @@
+#variables {
+  height: 250px;
+  width: 200px;
+  background-color: blue;
+}
+.div {
+  display: inline-block;
+}
+#mixin > div {
+  display: inline-block;
+}
+#mixins {
+  float: right;
+  height: 250px;
+  width: 200px;
+  background-color: blue;
+}
+#nesting {
+  background-color: orange;
+}
+#nesting p {
+  color: blue;
+}
+#nesting div {
+  height: 250px;
+  width: 200px;
+  background-color: blue;
+  background-color: black;
+}
+.clearfix {
+  display: block;
+  zoom: 1;
+}
+.clearfix:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
