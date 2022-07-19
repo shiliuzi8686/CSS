@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <style>
         /*  */
-        div{
+        #article {
             height: 200px;
             width: 180px;
             margin: 100px auto;
@@ -17,12 +17,18 @@
             /* box-shadow: 0 0 0 5px black; */
 
             /* 通过border的描边ouline和对应的描边偏移outline-offset来实现 */
+            /* border 和 outline 很类似，区别在于outline不占据空间，绘制于元素内容周围 */
+            /* 下面是border、outline、outline-offset一起使用的例子，更有助于理解三者 */
+            outline: dotted black 2px;
+            /* 设置：一个元素边缘或边框之间的间隙 */
+            outline-offset:2em;
+            border: 1px orange solid;
 
             /* box-shadow为inset时，阴影在边框之内（背景之上、内容之下） */
             /* 偏移量为正值时：x、y偏移量为分别从左向右、从上向下的偏移 */
             /* 由此可以看出，box-shadow、background、content是不在同一图层上的；只有content在盒模型中 */
-            box-shadow: inset 100px -100px rgba(177, 237, 143, 0.5);
-            background-image:url('./111.jpg');
+            /* box-shadow: inset 100px -100px rgba(177, 237, 143, 0.5); */
+            /* background-image:url('./111.jpg'); */
         }
     </style>
 </head>
@@ -31,7 +37,7 @@
         <div></div>
         <div></div>
     </main> -->
-    <div>
+    <div id="article">
         文章本天成 妙手偶得之
     </div>
 </body>

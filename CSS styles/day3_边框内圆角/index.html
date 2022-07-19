@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <input id="ck" type="checkbox" checked>
+        <label for="ck">box-shadow</label>
+        <div>A paragraph of filler text. La la la de dah de dah de la.</div>
+    </main>
+    <script>
+        /**
+         * 我们知道box-shadow是会紧贴border-radius圆角边的，
+         * 但是，描边outline并不会与圆角边贴合
+         * 我们可以将两者组合，
+         * 通过 box-shadow 去填补 outline 所产生的间隙来达到我们想要的结果 
+        */
+        /**
+         * 关于扩张半径的取值？假设border-radius的半径为r，
+         * 根据勾股定理，扩张半径的最小值应等于(√2−1)r ~= 3.314
+         * 最大值不能超过描边宽度，即6px
+        */
+    </script>
+</body>
+</html>

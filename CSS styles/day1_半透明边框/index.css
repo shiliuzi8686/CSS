@@ -10,7 +10,7 @@ main {
 div {
     padding: 12px;
     margin: 20px auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     /* background-color: Transparent; */
     border: 10px solid hsla(0, 0%, 100%, .2);
 
