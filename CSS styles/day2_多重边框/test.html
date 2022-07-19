@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /*  */
+        div{
+            height: 200px;
+            width: 180px;
+            margin: 100px auto;
+            /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色*/
+            /* 相当于实线边框 */
+            /* box-shadow: 0 0 0 5px black; */
+
+            /* 通过border的描边ouline和对应的描边偏移outline-offset来实现 */
+
+            /* box-shadow为inset时，阴影在边框之内（背景之上、内容之下） */
+            /* 偏移量为正值时：x、y偏移量为分别从左向右、从上向下的偏移 */
+            /* 由此可以看出，box-shadow、background、content是不在同一图层上的；只有content在盒模型中 */
+            box-shadow: inset 100px -100px rgba(177, 237, 143, 0.5);
+            background-image:url('./111.jpg');
+        }
+    </style>
+</head>
+<body>
+    <!-- <main>
+        <div></div>
+        <div></div>
+    </main> -->
+    <div>
+        文章本天成 妙手偶得之
+    </div>
+</body>
+</html>
