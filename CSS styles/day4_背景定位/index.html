@@ -6,8 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            padding: 80px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        div {
+            width: 229px;height: 139px;
+            margin: auto;
+            color: #f4f0ea;
+            padding: 16px 29px 28px 20px;
+            /* left|top？(px) / width|height */
+            /* background: #b4a078 url(./img.png) no-repeat 5px 95px/40px 40px; */
+            background: #b4a078 url(./img.png) no-repeat bottom right/40px 40px;
+        }
+        div:nth-of-type(1){
+            /* background-position: top 95px  left 5px; */
+            /* 下面的值是 29、28是因为（上面的padding的bottom、right的值）以及（background-origin默认为padding-box） */
+            background-position: right 29px  bottom 28px;
+        }
+        /* div:nth-of-type(2){
+            background-origin: content-box;
+            margin: 30px 0;
+        } */
+        .block2{
+            /* background-position是相对于 background-origin而言的(默认为padding) */
+            /* background-origin: border-box; */
+            /* background-origin: padding-box; */
+            background-origin: content-box;
+            /* 移动端纵向排列上下间距（是为了兼容在移动端纵向显示时没有间距的问题） */
+            margin: 29px 0;
+        }
+        div:nth-of-type(3){
+            background-position: calc(100% - 29px) calc(100% - 28px);
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <div class="block1">background-position方案</div>
+        <div class="block2">background-origin方案</div>
+        <div class="block3">calc方案</div>
+    </main>
 </body>
 </html>
