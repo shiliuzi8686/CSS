@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* background与content不在同一图层 */
+        /* 设置背景图层有background-多个属性，background可以简写 */
+        main {
+            box-sizing: border-box;
+            width: 200px;
+            height: 180px;
+            margin: 200px auto;
+            padding: 20px 30px;
+            border: 20px solid black;
+            /* padding-box指的是 padding和border的边界线 */
+            /* background-origin: padding-box; */
+            /* background-origin: border-box; */
+            /* background-origin: content-box;
+            background-color: aqua;
+            background-image: url(./img.png);
+            background-size:20px;
+            background-repeat: no-repeat;
+            background-position: bottom; */
+            background: url(./img.png) no-repeat bottom/20% padding-box;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>
