@@ -28,7 +28,7 @@
         }
         div:nth-of-type(1){
             /* background-position: top 95px  left 5px; */
-            /* 下面的值是 29、28是因为（上面的padding的bottom、right的值）以及（background-origin默认为padding-box） */
+            /* 下面的值是 29、28是因为（上面的padding的bottom、right的值）以及（下面的background-origin值为content-box） */
             background-position: right 29px  bottom 28px;
         }
         /* div:nth-of-type(2){
@@ -49,6 +49,9 @@
     </style>
 </head>
 <body>
+    <script>
+        /* 知识点：background-position, background-origin, calc */
+    </script>
     <main>
         <div class="block1">background-position方案</div>
         <div class="block2">background-origin方案</div>
