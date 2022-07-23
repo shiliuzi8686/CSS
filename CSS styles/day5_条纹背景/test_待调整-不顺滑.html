@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            width: 300px;
+            height: 15px;
+            margin:200px auto;
+            /* border: #efe2e2 solid 1px; */
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 1px #b2b0b0;
+            background-color: #fbeded;
+            /* background: repeating-linear-gradient(to right, #fbeded, #fbeded 5px, #f4a0a0, #f4a0a0 11px); */
+            /* repeating-linear-gradient也可以是角度值 */
+                /* 与上面第一个的效果一致 */
+            /* background: repeating-linear-gradient(-90deg, #fbeded, #fbeded 5px, #f4a0a0, #f4a0a0 11px); */
+            
+        }
+        main:hover{
+            border: #f59393 solid 1.5px;
+        }
+        .contain{
+            width: 50%;
+            height: 100%;
+                /* -45° */
+            background: repeating-linear-gradient(-45deg, #fbeded, #fbeded 5px, #f4a0a0, #f4a0a0 11px);
+            /* background-size:16px 16px; */
+            animation: panoramic 1s linear infinite;
+            border-radius: 10px;
+        }
+        @keyframes panoramic{
+            to{
+                /* 可以调整试下：x|y轴对应的位置值 */
+                background-position:6% 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <script></script>
+    <main>
+        <div class="contain"></div>
+    </main>
+</body>
+</html>
