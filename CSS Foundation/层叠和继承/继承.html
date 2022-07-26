@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>哈喽，你的行高是多少呢</h1><h1>查看行高</h1></div>
+    <script>
+        /**
+         * 为什么是这种情况呢？
+         * line-height默认值是1.2em
+         * h1的font-size没有声明，从父级继承
+         * 而line-height也是相对于父级的font-size而言的
+         * 相当于line-height和font-size同比例缩小了
+         * 此时1.2em，是相对于5px
+        */
+    </script>
+</body>
+</html>
