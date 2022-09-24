@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex {
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+            border-radius: 2em;
+            margin-top: 10px;
+            display: flex;
+        }
+        div[class^="round"] {
+            width: 50px;
+            height: 50px;
+            background-color: lightsalmon;
+            border-radius: 100%;
+        }
+        /* 匹配的是：class属性值以round开头，是其父元素的同类型（class属性都是以round开头的）的子元素的第三个元素的伪元素 */
+        /* [class^="round"]:nth-of-type(4)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        } */
+        /* 为啥第三个就是匹配不到呢 */
+        /* 
+        匹配是肯定匹配不到的，首先要满足class属性的属性值要以 round 开头，第三个div是 hhh ，肯定匹配不到
+        其次，上面和下面的选择器都是先将class属性的属性值要以 round 开头的元素匹配出来
+        接着，看这些在父元素的子元素同类型中的排序还是在父元素的子元素中的排序
+        上面的解释还是不对，等待解答中...
+        参考思路：[class^="round"] 是什么的简写形式，因为简单选择器链必须以类型或通用选择器开头这个不是
+        盲猜：没有写以类型开头的，都是以通用选择器开头
+        */
+        /* [class^="round"]:nth-child(3)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        } */
+        /* 下面这种可以匹配到 */
+        div > :nth-of-type(3)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        }
+        .hhh{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(220, 226, 178);
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex content1">
+        <div class="round1">A</div>
+        <div class="round2">B</div>
+        <div class="hhh"></div>
+        <div class="round3">C</div>
+    </div>
+</body>
+</html>
