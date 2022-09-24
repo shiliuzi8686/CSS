@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content1,
+        .content2,
+        .content3,
+        .content4,
+        .content5,
+        .content6 {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            border-radius: 2em;
+            background-color: rgb(211, 207, 207);
+            margin-top: 20px;
+        }
+        .round{
+            width: 50px;
+            height: 50px;
+            background-color: lightsalmon;
+            border-radius: 100%;
+        }
+        .content1{
+            justify-content: center;
+            align-items: center;
+        }
+        .content2{
+            justify-content: space-between;
+
+        }
+        .content2 > :nth-of-type(1){
+            align-self: flex-start;
+        }
+        .content2 > :nth-of-type(2){
+            align-self: flex-end;
+        }
+        .content3{
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content3 > :nth-of-type(1){
+            align-self: flex-start;
+        }
+        .content3 > :nth-of-type(3){
+            align-self: flex-end;
+        }
+        /*  4点之后的布局实现的HTML需要修改，
+            用多个flex来实现一个点数 
+        */
+        /* .content4{
+            flex-wrap: wrap;
+        }
+        .content4 > :nth-of-type(1){
+            justify-content: flex-start;
+            align-self: flex-start;
+        }
+        .content4 > :nth-of-type(2){
+            justify-content: flex-start;
+            align-self: flex-end;
+        }
+        .content4 > :nth-of-type(3){
+            justify-content: flex-end;
+            align-self: flex-end;
+        }
+        .content4 > :nth-of-type(4){
+            justify-content: flex-end;
+            align-self: flex-start;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content1">
+            <div class="round"></div>
+        </div>
+        <div class="content2">
+            <div class="round"></div>
+            <div class="round"></div>
+        </div>
+        <div class="content3">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        </div>
+        <div class="content4">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        </div>
+        <div class="content5">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        </div>
+        <div class="content6">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        </div>
+    </div>
+</body>
+</html>
