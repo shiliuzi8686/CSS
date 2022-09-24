@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证:nth-of-type(n)匹配的是前面选择器选中的元素的这种标签的一组兄弟元素中的第n个（这只是nth-of-type选择器的匹配，不要忘记前面可能还有class^="round"的匹配）</title>
+    <style>
+        .flex {
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+            border-radius: 2em;
+            margin-top: 10px;
+            display: flex;
+        }
+        div[class^="round"] {
+            width: 50px;
+            height: 50px;
+            background-color: lightsalmon;
+            border-radius: 100%;
+        }
+        /* 
+        唯一的解释应该就是：具有一组兄弟节点的标签中，用n来筛选出在一组兄弟节点的位置
+                        1.先找class^="round"，找到三个
+                        2.再看在同一种标签中的序号
+        匹配成功的元素要满足下面两个条件
+        1.class^="round"
+        2.class^="round"，这个所在的标签div的一组兄弟节点（里面的四个div），中的第三个
+        因此 class="hhh" 和 class="round3" 都不匹配
+        class="round3" 需要nth-of-type(4)才能匹配
+        class="hhh" 相匹配中的话，得找里面四个div的共同点：都是div元素
+        因此匹配 class="hhh" 可以：div:nth-of-type(3) ,或者先选中四个div的父元素：.flex > :nth-of-type(3)
+        */
+        [class^="round"]:nth-of-type(3)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        }
+        
+        /* 以下两个可以成功选中 */
+        /* div:nth-of-type(3)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        } */
+        /* .flex > :nth-of-type(3)::after{
+            content: "1";
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+            border-radius: 50%;
+        } */
+        .hhh {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(220, 226, 178);
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex content1">
+        <div class="round1">A</div>
+        <div class="round2">B</div>
+        <div class="hhh"></div>
+        <div class="round3">C</div>
+    </div>
+    <div class="round3">C</div>
+    <div class="round3">C</div>
+    <p style="color:lightcoral">应该是验证成功的,class="flex"同层的第三个div选中了</p>
+    <p>
+        验证:nth-of-type(n)匹配的是前面选择器选中的元素的这种标签的一组兄弟元素中的第n个（这只是nth-of-type选择器的匹配，不要忘记前面可能还有class^="round"的匹配）
+    </p>
+</body>
+</html>
